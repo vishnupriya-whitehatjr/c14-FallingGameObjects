@@ -1,0 +1,14 @@
+var faces;
+function draw() {
+  background("lightpink");
+  if(World.frameCount%randomNumber(30,50)===0){
+    faces=createSprite(randomNumber(30,350),10,40,40);
+    faces.setAnimation("face"+randomNumber(1,5));
+    faces.velocityY=randomNumber(2,15);
+    faces.scale=0.3;
+    faces.lifetime=200;
+  }
+  drawSprites();
+}
+
+code.org link: https://studio.code.org/projects/gamelab/fkmUxoh6Ondcm-EWNgaLvoMc-8qcW7a9Vkdig77dstk
