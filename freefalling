@@ -1,4 +1,6 @@
 var faces;
+var facesGroup =createGroup();
+var score = 0;
 function draw() {
   background("lightpink");
   if(World.frameCount%randomNumber(30,50)===0){
@@ -7,8 +9,19 @@ function draw() {
     faces.velocityY=randomNumber(2,15);
     faces.scale=0.3;
     faces.lifetime=200;
+    facesGroup.add(faces);
   }
+  for(var i =0;i<facesGroup.length;i++){
+    if(mousePressedOver(facesGroup.get(i))){
+      facesGroup.get(i).destroy();
+      score++;
+    }
+  }
+  fill("black");
+  textSize(25);
+  text("Score : "+score,150,200);
   drawSprites();
 }
+
 
 code.org link: https://studio.code.org/projects/gamelab/fkmUxoh6Ondcm-EWNgaLvoMc-8qcW7a9Vkdig77dstk
